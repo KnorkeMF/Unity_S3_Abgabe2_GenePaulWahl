@@ -27,7 +27,6 @@ public class ParallaxLayer3 : MonoBehaviour
         if (cam.position.x - transform.position.x > spriteWidth * 1.5f)
         {
             transform.position += new Vector3(spriteWidth * 3f, 0f, 0f);
-            Debug.Log(spriteWidth);
         }
     }
 }
