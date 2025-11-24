@@ -1113,8 +1113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 5844708057886139257, guid: e498c52f4d0b2e14984407c3699d52fb, type: 3}
   enemyTypes:
-  - {fileID: 11400000, guid: 0fd1df098697d904a8b9c58a4c2dc285, type: 2}
-  spawnInterval: 5
+  - {fileID: 11400000, guid: b2ef8284d92bc5547953016650b15a23, type: 2}
+  spawnInterval: 2
   spawnYRange: {x: -5, y: 5}
   spawnXOffset: 12
 --- !u!4 &1205810560
@@ -1126,7 +1126,7 @@ Transform:
   m_GameObject: {fileID: 1205810558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1778,7 +1778,7 @@ GameObject:
   - component: {fileID: 1845462025}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

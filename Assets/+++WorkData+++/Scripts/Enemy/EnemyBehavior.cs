@@ -18,6 +18,17 @@ public class EnemyBehavior : MonoBehaviour
     
     [HideInInspector] public float shootingTimer = 0f;
     [HideInInspector] public bool isShootingPhase = true;
+    [HideInInspector] public float nextSpreadTime = 0f;
+    
+    [HideInInspector] public bool kamikazeInitialized = false;
+    [HideInInspector] public Vector2 kamikazeDirection;
+    [HideInInspector] public bool kamikazePassedPlayer = false;
+
+    
+
+    public float stopX;
+    public bool hasStopX = false;
+
 
     void Start()
     {
@@ -58,21 +69,38 @@ public class EnemyBehavior : MonoBehaviour
 
     void HandleShooting()
     {
+        if (data.isKamikaze)
+            return;
+        
         if (data.shootingPattern == null)
             return;
 
+        // Spread-Shooting wird komplett über eigenes Timing gesteuert
+        if (data.shootingPattern is ShootSpreadSO spread)
+        {
+            if (spread.ShouldShoot(this))   // benutzt enemy.nextSpreadTime
+            {
+                spread.FireSpread(this);
+            }
+            return;
+        }
+
+        // -------- PHASE / NORMAL SCHIESSEN --------
         bool shouldShoot = data.shootingPattern.ShouldShoot(this);
 
         if (!shouldShoot)
-            return; // Pausephase → NICHT schießen → alles gut
+            return;
 
-        // Ab hier NUR wenn shooting phase aktiv ist
+        // Fire rate check
         if (Time.time >= nextFireTime)
         {
             Shoot();
-            nextFireTime = Time.time + data.fireRate;
+            nextFireTime = Time.time + data.fireRate; 
         }
     }
+
+
+
 
 
     private void Shoot()
@@ -101,4 +129,14 @@ public class EnemyBehavior : MonoBehaviour
     {
         return player;
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (data.isKamikaze && other.TryGetComponent(out PlayerHealth player))
+        {
+            player.TakeDamage(data.contactDamage);
+            Die();
+        }
+    }
+
 }

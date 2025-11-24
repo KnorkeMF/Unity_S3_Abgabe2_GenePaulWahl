@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa0a74ccec1efd4ebc4a0b9324709cd, type: 3}
-  m_Name: NormalPhaseShooting
-  m_EditorClassIdentifier: Assembly-CSharp::ShootPhasesSO
-  shootDuration: 5
-  pauseDuration: 1
+  m_Script: {fileID: 11500000, guid: f8fdef08fae9f894da99d2fe4d439493, type: 3}
+  m_Name: SpreadShoot
+  m_EditorClassIdentifier: Assembly-CSharp::ShootSpreadSO
+  projectileCount: 7
+  angleSpread: 30
+  fireInterval: 1

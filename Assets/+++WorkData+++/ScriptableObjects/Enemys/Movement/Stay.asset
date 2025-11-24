@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356180f4ec40eee4fb71f1400c35dc48, type: 3}
   m_Name: Stay
   m_EditorClassIdentifier: Assembly-CSharp::StayAtPositionMovementSO
-  stopX: 5
+  stopXRange: {x: 3, y: 6}
+  stopYRange: {x: -5, y: 5}
+  stopDistance: 0.1

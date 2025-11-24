@@ -24,4 +24,9 @@ public class EnemyData : ScriptableObject
     
     [Header(" Entry Settings")]
     public float entrySpeed = 3f;
+    
+    [Header("Kamikaze Settings")]
+    public bool isKamikaze = false;
+    public int contactDamage = 1;
+
 }

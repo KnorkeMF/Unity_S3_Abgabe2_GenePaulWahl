@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 017216e599f3bc6458ecbba3377400c8, type: 3}
-  m_Name: NormalEnemy
+  m_Name: StraightEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  name: NormalEnemy
+  name: 
   maxHealth: 10
   speed: 2
   points: 100
-  movementPattern: {fileID: 11400000, guid: 2213da155da36684593b3e3038b0cecf, type: 2}
-  shootingPattern: {fileID: 11400000, guid: faa08ea7dde349341aae4a42cbe0eeca, type: 2}
+  movementPattern: {fileID: 11400000, guid: df263813ace26234e81756e3fc9ba23b, type: 2}
+  shootingPattern: {fileID: 11400000, guid: 82685443e2c5cda4399780a3f6975e06, type: 2}
   fireRate: 0.3
   projectileData: {fileID: 11400000, guid: 8edbe01ad064f8e47909bb5b30758962, type: 2}
-  sprite: {fileID: 150808534820478951, guid: 3a87f60d95d7b9d469f7db14065b87c1, type: 3}
+  sprite: {fileID: -975737925119904437, guid: beb96e32c659c9e4481c71eef125466f, type: 3}
   entrySpeed: 3
   isKamikaze: 0
   contactDamage: 1

@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa0a74ccec1efd4ebc4a0b9324709cd, type: 3}
-  m_Name: NormalPhaseShooting
-  m_EditorClassIdentifier: Assembly-CSharp::ShootPhasesSO
-  shootDuration: 5
-  pauseDuration: 1
+  m_Script: {fileID: 11500000, guid: 1ced5313b03ef2d4288c1637f9989471, type: 3}
+  m_Name: Straight
+  m_EditorClassIdentifier: Assembly-CSharp::ShootStraightSO
