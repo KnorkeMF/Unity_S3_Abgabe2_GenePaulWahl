@@ -21,6 +21,7 @@ public class EnemyData : ScriptableObject
     
     [Header("Visuals")]
     public Sprite sprite;
+    public bool flipSpriteX = false;
     
     [Header(" Entry Settings")]
     public float entrySpeed = 3f;
@@ -28,5 +29,9 @@ public class EnemyData : ScriptableObject
     [Header("Kamikaze Settings")]
     public bool isKamikaze = false;
     public int contactDamage = 1;
+    
+    [Header("Difficulty Settings")]
+    public float weight = 1f;
+
 
 }

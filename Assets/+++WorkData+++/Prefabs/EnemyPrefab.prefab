@@ -84,8 +84,15 @@ MonoBehaviour:
   currentHealth: 0
   projectilePrefab: {fileID: 3618774895979470364, guid: b673d7110b3e59641875b0a4824d68a3, type: 3}
   firePoint: {fileID: 2798225511798257656}
+  explosionPrefab: {fileID: 4606565385663046173, guid: 8dd340c64b51d7c45930dede43565493, type: 3}
   shootingTimer: 0
   isShootingPhase: 1
+  nextSpreadTime: 0
+  kamikazeInitialized: 0
+  kamikazeDirection: {x: 0, y: 0}
+  kamikazePassedPlayer: 0
+  stopX: 0
+  hasStopX: 0
 --- !u!212 &-968591495747257926
 SpriteRenderer:
   m_ObjectHideFlags: 0

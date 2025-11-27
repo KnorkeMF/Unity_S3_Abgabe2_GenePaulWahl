@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Stayin Enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   name: Stayin
-  maxHealth: 20
+  maxHealth: 5
   speed: 2
   points: 100
   movementPattern: {fileID: 11400000, guid: 804a74a29301e34428cd816a7cd8ae02, type: 2}
   shootingPattern: {fileID: 11400000, guid: f556e298799bf92428f32ae9c0bd8cb0, type: 2}
   fireRate: 0.3
   projectileData: {fileID: 11400000, guid: 8edbe01ad064f8e47909bb5b30758962, type: 2}
-  sprite: {fileID: 1862673188319235437, guid: 087b05a9e77fe3843bc35336b59e117d, type: 3}
+  sprite: {fileID: -2079846367991948344, guid: a4faacc568bb274458b84822cad1c570, type: 3}
+  flipSpriteX: 0
   entrySpeed: 3
   isKamikaze: 0
   contactDamage: 1
+  weight: 1

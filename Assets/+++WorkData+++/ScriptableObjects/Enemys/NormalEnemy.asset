@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: NormalEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   name: NormalEnemy
-  maxHealth: 10
+  maxHealth: 3
   speed: 2
   points: 100
   movementPattern: {fileID: 11400000, guid: 2213da155da36684593b3e3038b0cecf, type: 2}
   shootingPattern: {fileID: 11400000, guid: faa08ea7dde349341aae4a42cbe0eeca, type: 2}
   fireRate: 0.3
   projectileData: {fileID: 11400000, guid: 8edbe01ad064f8e47909bb5b30758962, type: 2}
-  sprite: {fileID: 150808534820478951, guid: 3a87f60d95d7b9d469f7db14065b87c1, type: 3}
+  sprite: {fileID: 1295212744589330694, guid: 6cc34bbac2f76af49afce48d5143ddcc, type: 3}
+  flipSpriteX: 0
   entrySpeed: 3
   isKamikaze: 0
   contactDamage: 1
+  weight: 1

@@ -140,4 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fada46882b8b64399d1d7ab69c1a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShieldBubble
-  duration: 2
+  duration: 10

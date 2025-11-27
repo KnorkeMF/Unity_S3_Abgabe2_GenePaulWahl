@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
@@ -15,6 +16,12 @@ public class EnemyBehavior : MonoBehaviour
     
     public Projectile projectilePrefab;
     public Transform firePoint;
+    public GameObject explosionPrefab;
+    
+    private Color originalColor;
+    private Tween flashTween;
+    private Sequence hitSequence;
+
     
     [HideInInspector] public float shootingTimer = 0f;
     [HideInInspector] public bool isShootingPhase = true;
@@ -34,21 +41,32 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (data == null)
         {
-            Debug.LogError("Enemy spawned without EnemyData!", this);
             Destroy(gameObject);
             return;
         }
-
+        
         currentHealth = data.maxHealth;
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        originalColor = spriteRenderer.color;
 
         if (data.sprite != null)
         {
             spriteRenderer.sprite = data.sprite;
         }
+        
+        if (data.flipSpriteX)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
+
     }
 
     
@@ -115,6 +133,9 @@ public class EnemyBehavior : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
+        
+        PlayHitFeedback();
+        
         if(currentHealth <= 0)
             Die();
             
@@ -122,6 +143,15 @@ public class EnemyBehavior : MonoBehaviour
 
     void Die()
     {
+        hitSequence?.Kill();
+        flashTween?.Kill();
+        
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+        
+        ScoreManager.Instance.AddScore(data.points);
         Destroy(gameObject);
     }
 
@@ -138,5 +168,27 @@ public class EnemyBehavior : MonoBehaviour
             Die();
         }
     }
+
+    public void PlayHitFeedback()
+    {
+        if (spriteRenderer == null) return;
+
+        hitSequence?.Kill();
+        flashTween?.Kill();
+
+        spriteRenderer.color = originalColor;
+
+        Color hitColor = new Color(1f, 0.3f, 0.3f, 1f); // hellrot
+
+        hitSequence = DOTween.Sequence();
+        hitSequence
+            .Append(spriteRenderer.DOColor(hitColor, 0.05f))
+            .Append(spriteRenderer.DOColor(originalColor, 0.1f));
+
+        hitSequence.Play();
+    }
+
+
+
 
 }
