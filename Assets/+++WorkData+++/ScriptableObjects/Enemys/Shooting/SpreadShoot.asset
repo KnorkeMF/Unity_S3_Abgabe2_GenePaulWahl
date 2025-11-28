@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fdef08fae9f894da99d2fe4d439493, type: 3}
   m_Name: SpreadShoot
   m_EditorClassIdentifier: Assembly-CSharp::ShootSpreadSO
-  projectileCount: 7
+  projectileCount: 3
   angleSpread: 30
   fireInterval: 1

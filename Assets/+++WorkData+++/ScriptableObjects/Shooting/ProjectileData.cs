@@ -7,5 +7,10 @@ public class ProjectileData : ScriptableObject
     public float lifetime = 2f;
     public int damage = 1;
     
+    public bool isAOE = false;
+    public float explosionRadius = 2f;
+    public int explosionDamage = 10;
+    public GameObject explosionPrefab;
+    
     public bool isPlayerProjectile = false;
 }

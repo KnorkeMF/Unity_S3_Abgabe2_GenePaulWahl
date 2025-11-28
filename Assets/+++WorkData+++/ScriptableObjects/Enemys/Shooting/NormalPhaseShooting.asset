@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa0a74ccec1efd4ebc4a0b9324709cd, type: 3}
   m_Name: NormalPhaseShooting
   m_EditorClassIdentifier: Assembly-CSharp::ShootPhasesSO
-  shootDuration: 5
-  pauseDuration: 1
+  shootDuration: 1
+  pauseDuration: 2

@@ -19,14 +19,40 @@ public class Projectile : MonoBehaviour
     {
         if (data.isPlayerProjectile && other.TryGetComponent(out EnemyBehavior enemy))
         {
-            enemy.TakeDamage(data.damage);
+            if (data.isAOE)
+            {
+                ExplodeAOE();
+            }
+            else
+            {
+                enemy.TakeDamage(data.damage);
+            }
+
             Destroy(gameObject);
         }
-        
+
         if (!data.isPlayerProjectile && other.TryGetComponent(out PlayerHealth player))
         {
             player.TakeDamage(data.damage);
             Destroy(gameObject);
         }
     }
+    
+    void ExplodeAOE()
+    {
+        if (data.explosionPrefab != null)
+            Instantiate(data.explosionPrefab, transform.position, Quaternion.identity);
+        
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, data.explosionRadius);
+
+        foreach (var hit in hits)
+        {
+            if (hit.TryGetComponent(out EnemyBehavior enemy))
+            {
+                enemy.TakeDamage(data.explosionDamage);
+            }
+        }
+    }
+
+
 }

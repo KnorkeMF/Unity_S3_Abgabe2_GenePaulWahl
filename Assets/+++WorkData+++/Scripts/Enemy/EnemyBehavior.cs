@@ -17,6 +17,7 @@ public class EnemyBehavior : MonoBehaviour
     public Projectile projectilePrefab;
     public Transform firePoint;
     public GameObject explosionPrefab;
+    public GameObject scorePopupPrefab;
     
     private Color originalColor;
     private Tween flashTween;
@@ -149,6 +150,12 @@ public class EnemyBehavior : MonoBehaviour
         if (explosionPrefab != null)
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        }
+        
+        if (scorePopupPrefab != null)
+        {
+            GameObject popup = Instantiate(scorePopupPrefab, transform.position, Quaternion.identity);
+            popup.GetComponent<ScorePopup>().Show(data.points);
         }
         
         ScoreManager.Instance.AddScore(data.points);

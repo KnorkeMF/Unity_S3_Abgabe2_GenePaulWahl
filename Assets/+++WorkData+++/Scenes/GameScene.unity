@@ -1115,11 +1115,14 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5844708057886139257, guid: e498c52f4d0b2e14984407c3699d52fb, type: 3}
   enemyTypes:
   - {fileID: 11400000, guid: 3b36a08e2cdcef74c861f6e91ea7c171, type: 2}
-  spawnYRange: {x: -5, y: 5}
+  - {fileID: 11400000, guid: 0fd1df098697d904a8b9c58a4c2dc285, type: 2}
+  - {fileID: 11400000, guid: fd833d92ed99b524c9b864fc914f1e28, type: 2}
+  - {fileID: 11400000, guid: b2ef8284d92bc5547953016650b15a23, type: 2}
+  spawnYRange: {x: -4.5, y: 4.5}
   spawnXOffset: 12
   difficulty: 1
-  difficultyIncreasePerSecond: 0.1
-  baseSpawnInterval: 3
+  difficultyIncreasePerSecond: 0.05
+  baseSpawnInterval: 5
   minSpawnInterval: 0.5
 --- !u!4 &1205810560
 Transform:
@@ -2002,6 +2005,9 @@ MonoBehaviour:
   projectileData: {fileID: 11400000, guid: 69de661dd459ec94d8063bbe4ebc5eba, type: 2}
   firePoint: {fileID: 1458741571}
   fireRate: 0.15
+  missilePrefab: {fileID: 3618774895979470364, guid: 13fdd564898cfd84d996ab7c2bf468e5, type: 3}
+  missileData: {fileID: 11400000, guid: 882454e9ad522b14b9f2bd43bc949368, type: 2}
+  missileCooldown: 3
 --- !u!114 &1845462024
 MonoBehaviour:
   m_ObjectHideFlags: 0

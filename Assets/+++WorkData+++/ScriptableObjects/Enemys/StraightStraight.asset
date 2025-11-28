@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017216e599f3bc6458ecbba3377400c8, type: 3}
+  m_Name: StraightStraight
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  name: 
+  maxHealth: 5
+  speed: 2
+  points: 100
+  movementPattern: {fileID: 11400000, guid: df263813ace26234e81756e3fc9ba23b, type: 2}
+  shootingPattern: {fileID: 11400000, guid: 82685443e2c5cda4399780a3f6975e06, type: 2}
+  fireRate: 0.3
+  projectileData: {fileID: 11400000, guid: 8edbe01ad064f8e47909bb5b30758962, type: 2}
+  sprite: {fileID: -3812762990450263301, guid: a26dc5f1df7823942aa3110622580cb2, type: 3}
+  flipSpriteX: 0
+  entrySpeed: 3
+  isKamikaze: 0
+  contactDamage: 1
+  weight: 3
