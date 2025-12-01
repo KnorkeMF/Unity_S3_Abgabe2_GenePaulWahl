@@ -25,4 +25,4 @@ MonoBehaviour:
   entrySpeed: 3
   isKamikaze: 0
   contactDamage: 1
-  weight: 5
+  weight: 12

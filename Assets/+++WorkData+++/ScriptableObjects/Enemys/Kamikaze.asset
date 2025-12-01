@@ -24,5 +24,5 @@ MonoBehaviour:
   flipSpriteX: 1
   entrySpeed: 3
   isKamikaze: 1
-  contactDamage: 1
-  weight: 2
+  contactDamage: 3
+  weight: 5

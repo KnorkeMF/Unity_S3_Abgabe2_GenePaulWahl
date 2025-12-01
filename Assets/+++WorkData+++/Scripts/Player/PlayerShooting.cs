@@ -16,9 +16,14 @@ public class PlayerShooting : MonoBehaviour
     public Projectile missilePrefab;
     public ProjectileData missileData;
     public float missileCooldown = 3f;
+    
+    [Header("Audio")]
+    public AudioClip shootClip;
+    public AudioSource audioSource;
+
 
     private bool missilePressed;
-    private float nextMissileTime = 0f;
+    public float nextMissileTime = 0f;
 
 
     void Awake()
@@ -61,6 +66,9 @@ public class PlayerShooting : MonoBehaviour
         Projectile p = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         p.data = projectileData;
         p.Init(Vector2.right);
+        
+        if (audioSource != null && shootClip != null)
+            audioSource.PlayOneShot(shootClip);
     }
     
     private void FireMissile()

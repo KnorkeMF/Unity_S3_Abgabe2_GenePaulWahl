@@ -7,7 +7,7 @@ public class PlayerShield : MonoBehaviour
     public Transform shieldHolder;
     
     public float cooldown = 5f;
-    private float cooldownTimer = 0f;
+    public float cooldownTimer = 0f;
     
     private ShieldBubble activeShield;
     private PlayerInputActions input;
